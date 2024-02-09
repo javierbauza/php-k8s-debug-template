@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ include "php-k8s.fullname" . }}
+  name: {{ include "php-k8s-debug.fullname" . }}
   labels:
-    {{- include "php-k8s.labels" . | nindent 4 }}
+    {{- include "php-k8s-debug.labels" . | nindent 4 }}
 spec:
   type: {{ .Values.service.type }}
   ports:
@@ -12,4 +12,4 @@ spec:
       protocol: TCP
       name: http
   selector:
-    {{- include "php-k8s.selectorLabels" . | nindent 4 }}
+    {{- include "php-k8s-debug.selectorLabels" . | nindent 4 }}
